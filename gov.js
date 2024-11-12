@@ -307,3 +307,98 @@ let val=arrn.find((num)=> {
     return true
 }});
 console.log(val);
+
+//exludes exercise problem'
+arrayofNums=[1,3,4,56,7,1];
+ex=[1,3]
+console.log(excludes(arrayofNums,ex));
+function excludes(num,exclude){
+    let result=[]
+    for(let i of num){
+        if (!ex.includes(i)){
+            result.push(i);
+        }
+    }
+    return result;    
+}
+console.log("---shifting----")
+//shifting
+let num=[1,2,3,4,5];
+
+console.log(shifting(num,0,-1));
+
+function shifting(num,index,offset){
+if(index+offset >=num.length || index+offset <0){
+    console.log("Index error");
+    return;
+}
+
+
+let result=[...num];
+let ele=result.splice(index,1)[0];
+console.log(result)
+result.splice(index+offset,0,ele);
+return result;
+}
+
+
+//count occurnence
+
+console.log(countOcuurences([1,2,3,4,5,1],1));
+function countOcuurences(num,searchelement){
+
+    let obj={};
+    for(let i of num){
+        if(i in obj){
+        obj[i]=obj[i]+1;
+        }else{
+            obj[i]=1;
+        }
+    }
+
+    return obj[searchelement];
+    
+   
+
+}
+
+//large num
+console.log(getMax([3,4,7]
+
+))
+function getMax(numarray){
+    if(numarray.length===0){
+        return undefined;
+    }
+
+    maxnumber=0;
+    for(let i of numarray){
+        if(maxnumber<i){
+            maxnumber=i;
+        }
+    }
+    return maxnumber;
+}
+
+///movies exercide
+
+let movies=[
+    {title:"e",year:2018,rating:4.7},
+    {title:"a",year:2018,rating:4.5},
+    {title:"b",year:2018,rating:4.7},
+    {title:"c",year:2018,rating:3},
+    {title:"d",year:2017,rating:4.5}
+    
+]
+
+let result=[]
+for(let movie of movies){
+    
+    if (movie.year===2018 && movie.rating>4){
+        result.push(movie)
+       
+    }
+    
+}
+
+console.log(result.sort(rating=>rating>4));
